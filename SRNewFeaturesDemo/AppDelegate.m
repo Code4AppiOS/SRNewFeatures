@@ -25,11 +25,13 @@
     showNewFeature = YES; // Set YES for test 
     if (showNewFeature) {
         NSArray *imageNames = @[@"newfeature1.jpg", @"newfeature2.jpg", @"newfeature3.jpg", @"newfeature4.jpg"];
-        SRNewFeaturesViewController *newFeaturesVC = [SRNewFeaturesViewController sr_newFeatureWithImageNames:imageNames];
+        UIViewController *newRootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+        SRNewFeaturesViewController *newFeaturesVC = [SRNewFeaturesViewController sr_newFeatureWithImageNames:imageNames
+                                                                                           rootViewController:newRootViewController];
         newFeaturesVC.hideSkipButton = NO; // show skip Button
         self.window.rootViewController = newFeaturesVC;
     } else {
-        UIViewController *newRootViewController = [UIStoryboard storyboardWithName:@"Main" bundle:nil].instantiateInitialViewController;
+        UIViewController *newRootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
         [UIView transitionWithView:self.window
                           duration:0.75f
                            options:UIViewAnimationOptionTransitionFlipFromLeft
