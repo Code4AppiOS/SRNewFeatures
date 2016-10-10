@@ -76,6 +76,18 @@
                 [imageView setFrame:(CGRect){imageW * i, 0, imageW, imageH}];
                 if (i == self.imageNames.count - 1) {
                     // Here you can add a custom Button to switch the root controller.
+                    // Such as
+                    {
+                        UIButton *customBtn = [[UIButton alloc] init];
+                        [customBtn setImage:[UIImage imageNamed:@"start_huanshi_AR_normal"]  forState:UIControlStateNormal];
+                        [customBtn setImage:[UIImage imageNamed:@"start_huanshi_AR_pressed"] forState:UIControlStateHighlighted];
+                        [customBtn sizeToFit];
+                        customBtn.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height - customBtn.frame.size.height - 100);
+                        [customBtn addTarget:self action:@selector(tapAciton) forControlEvents:UIControlEventTouchUpInside];
+                        [imageView addSubview:customBtn];
+                        [imageView setUserInteractionEnabled:YES];
+                    }
+                    
                     [imageView setUserInteractionEnabled:YES];
                     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAciton)];
                     [imageView addGestureRecognizer:tap];
