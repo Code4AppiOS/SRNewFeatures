@@ -1,23 +1,21 @@
 # SRNewFeatures
 **The rapid integration of showing new features**.
 
-![image](./demoscreen.png)
+![image](./show.GIF)
+![image](./show.PNG)
 
 ## Usage
 ````objc
-/**
- *  Create new features view controller with images.
- *
- *  @param imageNames The image's name array.
- *  @param rootVC     The key window's true root view controller.
- *
- *  @return SRNewFeatureViewController
- */
-+ (instancetype)sr_newFeatureWithImageNames:(NSArray *)imageNames rootViewController:(UIViewController *)rootVC;
-    }
+if ([SRNewFeaturesViewController sr_shouldShowNewFeature]) {
+    NSArray *imageNames = @[@"newfeature1.jpg", @"newfeature2.jpg", @"newfeature3.jpg", @"newfeature4.jpg"];
+    SRNewFeaturesViewController *newFeaturesVC = [SRNewFeaturesViewController sr_newFeatureWithImageNames:imageNames
+                                                                                       rootViewController:[ViewController new]];
+    newFeaturesVC.hideSkipButton = NO; // show skip Button
+    self.window.rootViewController = newFeaturesVC;
+} else {
+    self.window.rootViewController = [ViewController new];
+}
 ````
-
- **You can seee more detail in project.** 
 
 ## Custom Settings
 ````objc

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SRNewFeaturesViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,24 +22,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    BOOL showNewFeature = [SRNewFeaturesViewController sr_shouldShowNewFeature];
-    showNewFeature = YES; // Set YES for test 
-    if (showNewFeature) {
+    BOOL shouldShow = [SRNewFeaturesViewController sr_shouldShowNewFeature];
+    shouldShow = YES; // Set YES for test
+    if (shouldShow) {
         NSArray *imageNames = @[@"newfeature1.jpg", @"newfeature2.jpg", @"newfeature3.jpg", @"newfeature4.jpg"];
-        UIViewController *newRootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
         SRNewFeaturesViewController *newFeaturesVC = [SRNewFeaturesViewController sr_newFeatureWithImageNames:imageNames
-                                                                                           rootViewController:newRootViewController];
+                                                                                           rootViewController:[ViewController new]];
         newFeaturesVC.hideSkipButton = NO; // show skip Button
         self.window.rootViewController = newFeaturesVC;
     } else {
-        UIViewController *newRootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-        [UIView transitionWithView:self.window
-                          duration:0.75f
-                           options:UIViewAnimationOptionTransitionFlipFromLeft
-                        animations:^{
-                            self.window.rootViewController = newRootViewController;
-                        }
-                        completion:nil];
+        self.window.rootViewController = [ViewController new];
     }
     
     [self.window makeKeyAndVisible];
