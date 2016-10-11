@@ -1,8 +1,8 @@
 # SRNewFeatures
 **The rapid integration of showing new features**.
 
-![image](./show.GIF)
-![image](./show.PNG)
+![image](./show.gif)
+![image](./show.png)
 
 ## Usage
 ````objc

@@ -11,39 +11,39 @@
 @interface SRNewFeaturesViewController : UIViewController
 
 /**
-*  Whether to hide pageControl, default is NO which means show pageControl.
-*/
+ Whether to hide pageControl, default is NO which means show pageControl.
+ */
 @property (nonatomic, assign) BOOL hidePageControl;
 
 /**
- *  Whether to hide skip Button, default is YES which means hide skip Button.
+  Whether to hide skip Button, default is YES which means hide skip Button.
  */
 @property (nonatomic, assign) BOOL hideSkipButton;
 
 /**
- *  Current page indicator tint color, default is [UIColor whiteColor].
+ Current page indicator tint color, default is [UIColor whiteColor].
  */
 @property (nonatomic, strong) UIColor *currentPageIndicatorTintColor;
 
 /**
- *  Other page indicator tint color, default is [UIColor lightGrayColor].
+ Other page indicator tint color, default is [UIColor lightGrayColor].
  */
 @property (nonatomic, strong) UIColor *pageIndicatorTintColor;
 
 /**
- *  Only the first start app need show new features.
- *
- *  @return YES to show, NO not to show.
+ Only the first start app need show new features.
+
+ @return YES to show, NO not to show.
  */
 + (BOOL)sr_shouldShowNewFeature;
 
 /**
- *  Create new features view controller with images.
- *
- *  @param imageNames The image's name array.
- *  @param rootVC     The key window's true root view controller.
- *
- *  @return SRNewFeatureViewController
+ Create new features view controller with images.
+
+ @param imageNames The image's name array.
+ @param rootVC     The key window's true root view controller.
+
+ @return SRNewFeatureViewController
  */
 + (instancetype)sr_newFeatureWithImageNames:(NSArray *)imageNames rootViewController:(UIViewController *)rootVC;
 
