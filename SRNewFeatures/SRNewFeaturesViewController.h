@@ -10,13 +10,15 @@
 
 @interface SRNewFeaturesViewController : UIViewController
 
+#pragma mark - Properties
+
 /**
  Whether to hide pageControl, default is NO which means show pageControl.
  */
 @property (nonatomic, assign) BOOL hidePageControl;
 
 /**
-  Whether to hide skip Button, default is YES which means hide skip Button.
+ Whether to hide skip Button, default is YES which means hide skip Button.
  */
 @property (nonatomic, assign) BOOL hideSkipButton;
 
@@ -29,6 +31,8 @@
  Other page indicator tint color, default is [UIColor lightGrayColor].
  */
 @property (nonatomic, strong) UIColor *pageIndicatorTintColor;
+
+#pragma mark - Class methods
 
 /**
  Only the first start app need show new features.

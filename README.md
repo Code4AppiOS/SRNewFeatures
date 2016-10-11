@@ -1,4 +1,5 @@
 # SRNewFeatures
+
 **The rapid integration of showing new features**.
 
 ![image](./show.gif)
@@ -18,24 +19,25 @@ if ([SRNewFeaturesViewController sr_shouldShowNewFeature]) {
 ````
 
 ## Custom Settings
+
 ````objc
 /**
-*  Whether to hide pageControl, default is NO which means show pageControl.
-*/
+ Whether to hide pageControl, default is NO which means show pageControl.
+ */
 @property (nonatomic, assign) BOOL hidePageControl;
 
 /**
- *  Whether to hide skip Button, default is YES which means hide skip Button.
+ Whether to hide skip Button, default is YES which means hide skip Button.
  */
 @property (nonatomic, assign) BOOL hideSkipButton;
 
 /**
- *  Current page indicator tint color, default is [UIColor whiteColor].
+ Current page indicator tint color, default is [UIColor whiteColor].
  */
 @property (nonatomic, strong) UIColor *currentPageIndicatorTintColor;
 
 /**
- *  Other page indicator tint color, default is [UIColor lightGrayColor].
+ Other page indicator tint color, default is [UIColor lightGrayColor].
  */
 @property (nonatomic, strong) UIColor *pageIndicatorTintColor;
 ````
